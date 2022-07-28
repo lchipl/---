@@ -14,6 +14,10 @@ module.exports = {
         clean: true,
         assetModuleFilename: "[name][ext]"
     },
+    resolve: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    },
+    devtool: isDev ? "source-map" : "",
     devServer: {
         static: {
             directory: path.join(__dirname, "./")
