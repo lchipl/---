@@ -1,0 +1,91 @@
+@import "vars";
+@import "fonts";
+@import "mixins";
+html {
+  box-sizing: border-box;
+}
+
+*,*::after,*::before {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  cursor: pointer;
+  background: #F8F8F8;
+}
+
+li {
+  list-style: none;
+}
+
+.header {
+  background: #FFFFFF;
+
+  .container {
+    padding: 0 24px;
+  }
+
+  &__inner {
+    min-height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.menu {
+  &__button {
+   @include main-button;
+  }
+}
+
+.search {
+  &__button {
+   @include main-button;
+  }
+}
+
+.tools {
+  &__button {
+    @include main-button;
+  }
+}
+
+.phone {
+  &__button {
+    @include main-button;
+  }
+}
+
+.message {
+  &__button {
+    @include main-button;
+  }
+}
+
+.person {
+  &__button {
+    @include main-button;
+  }
+}
+
+.phone__button, .message__button, .person__button {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .phone__button, .message__button, .person__button {
+    display: block;
+    @include main-button;
+  }
+
+}
+
+@media (min-width: 1120px) {
+  .header {
+    display: none;
+  }
+}
