@@ -1,8 +1,15 @@
 @import "vars";
 @import "fonts";
 @import "mixins";
+//@import url(~normalize.css); ???
+@import "../../node_modules/normalize.css/normalize.css";
+
 html {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }
 
 *,*::after,*::before {
@@ -12,7 +19,6 @@ html {
 body {
   min-width: 320px;
   overflow-x: hidden;
-  cursor: pointer;
   background: #F8F8F8;
 }
 
@@ -74,6 +80,79 @@ li {
 
 .phone__button, .message__button, .person__button {
   display: none;
+}
+
+.navigation{
+
+  &__list{
+    display: flex;
+  }
+
+  &__item {
+    cursor: pointer;
+    white-space: nowrap;
+    padding: 8px;
+    border: 2px solid transparent;
+    &:focus, &:hover {
+      background: #FFFFFF;
+      border: 2px solid #B8FFEC;
+    }
+  }
+
+  &__link {
+    color: #7E7E82;
+  }
+}
+
+.text {
+  display: block;
+  font-size: 14px;
+}
+
+.readmore {
+
+  &__link {
+    color:#1B1C21
+  }
+}
+
+.title {
+
+  &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: #41f6d7;
+      width: 8px;
+      border-radius: 4px;
+      height: 36px;
+      left: 0;
+      transform: translate(-4px);
+  }
+}
+
+readmore {
+    display: inline-block;
+    margin: 16px 0;
+
+  &__link {
+    border: none;
+    background: transparent;
+  }
+
+  &__link::before {
+    content: '';
+    display: inline-block;
+    vertical-align: text-bottom;
+    height: 100%;
+    background: red; //url('../assets/expand.svg') no-repeat no-repeat center center;
+    transform: rotate(180deg);
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    position: relative;
+    top: 4px;
+  }
 }
 
 @media (min-width: 768px) {
