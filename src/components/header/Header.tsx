@@ -29,6 +29,7 @@ export const Header = () => {
                         <button className="person__button">
                         </button>
                     </div>
+                    <div className="divider-icon"></div>
                     <div className="search">
                         <button className="search__button">
                         </button>

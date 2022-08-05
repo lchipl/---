@@ -45,41 +45,42 @@ li {
 .menu {
   &__button {
    @include main-button;
+   background: url('../assets/burgerMenu.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .search {
   &__button {
    @include main-button;
-   background: url('../assets/search.png') no-repeat no-repeat center center
+   background: url('../assets/search.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .tools {
   &__button {
     @include main-button;
-    background: url('../assets/tool.png') no-repeat no-repeat center center
+    background: url('../assets/tool.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .phone {
   &__button {
     @include main-button;
-    background: url('../assets/call.png') no-repeat no-repeat center center
+    background: url('../assets/call.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .message {
   &__button {
     @include main-button;
-    background: url('../assets/message.png') no-repeat no-repeat center center
+    background: url('../assets/message.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .person {
   &__button {
     @include main-button;
-    background: url('../assets/profile.png') no-repeat no-repeat center center
+    background: url("../assets/profile.png") #FF3E79 no-repeat no-repeat center center;
   }
 }
 
@@ -88,9 +89,9 @@ li {
 }
 
 .navigation{
-
   &__list{
     display: flex;
+    overflow-x: hidden;
   }
 
   &__item {
@@ -131,7 +132,7 @@ li {
 }
 
 .readmore {
-    display: inline-block;
+    display: block;
     margin: 16px 0;
 
   &__button {
@@ -146,7 +147,7 @@ li {
     display: inline-block;
     vertical-align: text-bottom;
     height: 100%;
-    background: url('../assets/expand.svg') no-repeat no-repeat center center;
+    background: url('../assets/expand.svg')  no-repeat no-repeat center center;
     width: 24px;
     height: 24px;
     margin-right: 8px;
@@ -155,7 +156,7 @@ li {
   }
 }
 
-.services__navigation {
+.services {
   display: none;
 }
 
@@ -167,12 +168,29 @@ li {
     color: darken($color: #7e7e82, $amount: 35%);
   }
 }
+
+.divider-icon {
+  display: inline-block;
+  vertical-align: super;
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
 @media (min-width: 768px) {
   .phone__button, .message__button, .person__button {
     display: block;
     @include main-button;
   }
 
+  .navigation {
+
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
 }
 
 @media (min-width: 1120px) {
@@ -180,8 +198,16 @@ li {
     display: none;
   }
 
-  .services__navigation {
+  .services {
     display: flex;
+  }
+
+}
+
+.about {
+  &__img {
+    margin-left: -16px;
+    width: 100vw;
   }
 }
 
@@ -212,10 +238,30 @@ li {
 //  top: 0;
 //  left: 0;
 //}
-//.icon-settings {
-//  background: url('../../assets/icons/icon-settings.svg') no-repeat no-repeat center center #ff3e79;
-//}
-//
-//.icon-search {
-//  background: url('../../assets/icons/icon-search.svg') no-repeat no-repeat center center #ff3e79;
-//}
+.icon-settings {
+  @include main-button;
+  background: url('../assets/tool.png') no-repeat no-repeat center center #ff3e79;
+}
+
+.icon-search {
+  @include main-button;
+  background: url('../assets/search.png') no-repeat no-repeat center center #ff3e79;
+}
+
+.services {
+
+  &__button {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 32px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    //font-family: 'TTLakes-Medium';
+  }
+  &__label {
+    margin-right: 9px;
+  }
+}
