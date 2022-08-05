@@ -45,36 +45,42 @@ li {
 .menu {
   &__button {
    @include main-button;
+   background: url('../assets/burgerMenu.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .search {
   &__button {
    @include main-button;
+   background: url('../assets/search.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .tools {
   &__button {
     @include main-button;
+    background: url('../assets/tool.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .phone {
   &__button {
     @include main-button;
+    background: url('../assets/call.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .message {
   &__button {
     @include main-button;
+    background: url('../assets/message.png') #FF3E79 no-repeat no-repeat center center;
   }
 }
 
 .person {
   &__button {
     @include main-button;
+    background: url("../assets/profile.png") #FF3E79 no-repeat no-repeat center center;
   }
 }
 
@@ -83,9 +89,9 @@ li {
 }
 
 .navigation{
-
   &__list{
     display: flex;
+    overflow-x: hidden;
   }
 
   &__item {
@@ -93,9 +99,10 @@ li {
     white-space: nowrap;
     padding: 8px;
     border: 2px solid transparent;
-    &:focus, &:hover {
+    &:first-child {
       background: #FFFFFF;
       border: 2px solid #B8FFEC;
+      border-radius: 6px;
     }
   }
 
@@ -107,13 +114,6 @@ li {
 .text {
   display: block;
   font-size: 14px;
-}
-
-.readmore {
-
-  &__link {
-    color:#1B1C21
-  }
 }
 
 .title {
@@ -131,22 +131,23 @@ li {
   }
 }
 
-readmore {
-    display: inline-block;
+.readmore {
+    display: block;
     margin: 16px 0;
 
-  &__link {
+  &__button {
     border: none;
     background: transparent;
+    cursor: pointer;
+    border: none;
   }
 
-  &__link::before {
+  &__button::before {
     content: '';
     display: inline-block;
     vertical-align: text-bottom;
     height: 100%;
-    background: red; //url('../assets/expand.svg') no-repeat no-repeat center center;
-    transform: rotate(180deg);
+    background: url('../assets/expand.svg')  no-repeat no-repeat center center;
     width: 24px;
     height: 24px;
     margin-right: 8px;
@@ -155,16 +156,112 @@ readmore {
   }
 }
 
+.services {
+  display: none;
+}
+
+.navigation__link {
+  color: #7e7e82;
+  text-decoration: none;
+
+  &__link:hover {
+    color: darken($color: #7e7e82, $amount: 35%);
+  }
+}
+
+.divider-icon {
+  display: inline-block;
+  vertical-align: super;
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
 @media (min-width: 768px) {
   .phone__button, .message__button, .person__button {
     display: block;
     @include main-button;
   }
 
+  .navigation {
+
+    &__list {
+      flex-wrap: wrap;
+    }
+  }
 }
 
 @media (min-width: 1120px) {
   .header {
     display: none;
+  }
+
+  .services {
+    display: flex;
+  }
+
+}
+
+.about {
+  &__img {
+    margin-left: -16px;
+    width: 100vw;
+  }
+}
+
+//
+//.icon-phone {
+//  background: url('../../assets/icons/icon-phone.svg') no-repeat no-repeat center center;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//
+//.icon-burger {
+//  background: url('../../assets/icons/icon-burger.svg') no-repeat no-repeat center center #ff3e79;
+//}
+//
+//.icon-message {
+//  background: url('../../assets/icons/icon-message.svg') no-repeat no-repeat center center #ff3e79;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//.icon-profile {
+//  background: url('../../assets/icons/icon-profile.svg') no-repeat no-repeat center center #ff3e79;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+.icon-settings {
+  @include main-button;
+  background: url('../assets/tool.png') no-repeat no-repeat center center #ff3e79;
+}
+
+.icon-search {
+  @include main-button;
+  background: url('../assets/search.png') no-repeat no-repeat center center #ff3e79;
+}
+
+.services {
+
+  &__button {
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 32px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    //font-family: 'TTLakes-Medium';
+  }
+  &__label {
+    margin-right: 9px;
   }
 }
