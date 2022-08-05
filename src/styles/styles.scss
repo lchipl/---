@@ -51,30 +51,35 @@ li {
 .search {
   &__button {
    @include main-button;
+   background: url('../assets/search.png') no-repeat no-repeat center center
   }
 }
 
 .tools {
   &__button {
     @include main-button;
+    background: url('../assets/tool.png') no-repeat no-repeat center center
   }
 }
 
 .phone {
   &__button {
     @include main-button;
+    background: url('../assets/call.png') no-repeat no-repeat center center
   }
 }
 
 .message {
   &__button {
     @include main-button;
+    background: url('../assets/message.png') no-repeat no-repeat center center
   }
 }
 
 .person {
   &__button {
     @include main-button;
+    background: url('../assets/profile.png') no-repeat no-repeat center center
   }
 }
 
@@ -93,9 +98,10 @@ li {
     white-space: nowrap;
     padding: 8px;
     border: 2px solid transparent;
-    &:focus, &:hover {
+    &:first-child {
       background: #FFFFFF;
       border: 2px solid #B8FFEC;
+      border-radius: 6px;
     }
   }
 
@@ -107,13 +113,6 @@ li {
 .text {
   display: block;
   font-size: 14px;
-}
-
-.readmore {
-
-  &__link {
-    color:#1B1C21
-  }
 }
 
 .title {
@@ -131,22 +130,23 @@ li {
   }
 }
 
-readmore {
+.readmore {
     display: inline-block;
     margin: 16px 0;
 
-  &__link {
+  &__button {
     border: none;
     background: transparent;
+    cursor: pointer;
+    border: none;
   }
 
-  &__link::before {
+  &__button::before {
     content: '';
     display: inline-block;
     vertical-align: text-bottom;
     height: 100%;
-    background: red; //url('../assets/expand.svg') no-repeat no-repeat center center;
-    transform: rotate(180deg);
+    background: url('../assets/expand.svg') no-repeat no-repeat center center;
     width: 24px;
     height: 24px;
     margin-right: 8px;
@@ -155,6 +155,18 @@ readmore {
   }
 }
 
+.services__navigation {
+  display: none;
+}
+
+.navigation__link {
+  color: #7e7e82;
+  text-decoration: none;
+
+  &__link:hover {
+    color: darken($color: #7e7e82, $amount: 35%);
+  }
+}
 @media (min-width: 768px) {
   .phone__button, .message__button, .person__button {
     display: block;
@@ -167,4 +179,43 @@ readmore {
   .header {
     display: none;
   }
+
+  .services__navigation {
+    display: flex;
+  }
 }
+
+//
+//.icon-phone {
+//  background: url('../../assets/icons/icon-phone.svg') no-repeat no-repeat center center;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//
+//.icon-burger {
+//  background: url('../../assets/icons/icon-burger.svg') no-repeat no-repeat center center #ff3e79;
+//}
+//
+//.icon-message {
+//  background: url('../../assets/icons/icon-message.svg') no-repeat no-repeat center center #ff3e79;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//.icon-profile {
+//  background: url('../../assets/icons/icon-profile.svg') no-repeat no-repeat center center #ff3e79;
+//  display: none;
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//.icon-settings {
+//  background: url('../../assets/icons/icon-settings.svg') no-repeat no-repeat center center #ff3e79;
+//}
+//
+//.icon-search {
+//  background: url('../../assets/icons/icon-search.svg') no-repeat no-repeat center center #ff3e79;
+//}

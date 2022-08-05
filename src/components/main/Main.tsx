@@ -6,6 +6,16 @@ export const Main = () => {
     return (
         <main className="main">
             <h1 className="title">Услуги и сервисы</h1>
+            <div className="services__navigation">
+                <button className="services__button">
+                    <p className="button-label">Оставить заявку</p>
+                    <div className="button icon-settings"></div>
+                </button>
+                <button className="services__button">
+                    <p className="button-label">Статус ремонта</p>
+                    <div className="button icon-search"></div>
+                </button>
+            </div>
             <nav className="navigation">
                 <ul className="navigation__list">
                     <li className="navigation__item"><a className="navigation__link" href="#">Ремонтируемые бренды</a></li>
@@ -21,7 +31,7 @@ export const Main = () => {
                 Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера
             </p>
             <div className="readmore">
-                <button className="readmore__link">Читать далее</button>
+                <button className="readmore__button">Читать далее</button>
             </div>
             <img src={entryIcon} alt="doorWiev" />
         </main>
