@@ -1,7 +1,7 @@
 import React from "react";
 import {render} from "react-dom";
-import "./styles.scss";
-import logo from "../assets/logo.png";
+import "./styles/styles.scss";
+import logo from "./assets/logo.png";
 
 const App = () => {
     return (
@@ -30,19 +30,14 @@ const App = () => {
                         <button className="button icon-message"></button>
                         <button className="button icon-profile"></button>
                     </div>
-                    <a href="mailto:mail@cps.com">mail@cps.com </a>
-                    <br/>
-                        <div className="contacts__buttons-row">
-                        <a href="tel:88008908900">8 800 890 8900</a>
-                        </div>
+                        <a className="contacts__mail-link" href="mailto:mail@cps.com">mail@cps.com </a>
+                        <a className="contacts__phone-link" href="tel:88008908900">8 800 890 8900</a>
                     </div>
-                <div>
                     <div className="languages">
-                        <button className="languages__button languages__button--active">RU</button>
+                        <button className="languages__button languages__button-active">RU</button>
                         <button className="languages__button">EN</button>
                         <button className="languages__button">CH</button>
                     </div>
-                </div>
             </footer>
         </aside>
     )
