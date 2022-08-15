@@ -1,13 +1,15 @@
 import React from "react";
 import {render} from "react-dom";
+import "./styles.scss";
+import logo from "../assets/logo.png";
 
 const App = () => {
     return (
-        <aside>
+        <aside className="sidebar">
             <header className="sidebar__header">
                         <button className="button icon-close"></button>
-                        <a href="#"><img src="../../assets/logo.svg" alt="logo" className="logo"/></a>
-                        <div className="button icon-search-sidebar"></div>
+                        <a href="#"><img src={logo} alt="logo" className="logo"/></a>
+                        <button className="button icon-search-sidebar"></button>
             </header>
             <nav>
                 <ul className="menu">
@@ -21,15 +23,19 @@ const App = () => {
                     <li><a href="#" className="menu__link">Контанты</a></li>
                 </ul>
             </nav>
-            <footer>
+            <footer className="sidebar__footer">
                 <div className="contacts">
-                <a href="mailto:mail@cps.com">mail@cps.com </a>
-                <br/>
                     <div className="contacts__buttons-row">
-                    <a href="tel:88008908900">8 800 890 8900</a>
-                    <button className="button icon-profile"></button>
+                        <button className="button icon-phone"></button>
+                        <button className="button icon-message"></button>
+                        <button className="button icon-profile"></button>
                     </div>
-                </div>
+                    <a href="mailto:mail@cps.com">mail@cps.com </a>
+                    <br/>
+                        <div className="contacts__buttons-row">
+                        <a href="tel:88008908900">8 800 890 8900</a>
+                        </div>
+                    </div>
                 <div>
                     <div className="languages">
                         <button className="languages__button languages__button--active">RU</button>
