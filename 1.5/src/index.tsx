@@ -12,7 +12,11 @@ import hp from "./assets/brands/hp.png";
 import acer from "./assets/brands/acer.png";
 import sony from "./assets/brands/sony.png";
 
+//const [title, setTitle] = React.useState("Показать все");
 
+// const showMore = () => {
+//   setTitle("Скрыть")
+// }
 //чмбсл: массив сделать из компонентов и промапить блоки
 
  const App = () => {
@@ -22,11 +26,8 @@ import sony from "./assets/brands/sony.png";
             <h3 className="section-title">Ремонт техники различных брендов</h3>
            </div>
            <section className="container container-mobile-padding-right-none">
-             <div className="brands"></div>
-             <div className="collapse-button content-is-collapsed">
-               Показать все
-             </div>
            <div className="swiper-wrapper">
+             <div className="brands">
              <div className="brands__card-item swiper-slide">
                <img src={lenovo} alt="lenovo"/>
                <div className="check-partner-button"></div>
@@ -72,8 +73,12 @@ import sony from "./assets/brands/sony.png";
                <div className="check-partner-button"></div>
              </div>
            </div>
-         <div className="swiper-pagination"></div>
+             </div>
            </section>
+           <div  className="collapse-button content-is-collapsed">
+             {/* {title} */} показать все
+           </div>
+         <div className="swiper-pagination"></div>
          </section>
      )
  }
