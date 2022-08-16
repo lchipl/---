@@ -1,5 +1,8 @@
 import React from "react";
 import {render} from "react-dom";
+
+import "./styles.scss";
+
 import lenovo from "./assets/brands/lenovo.png";
 import samsung from "./assets/brands/samsung.png";
 import apple from "./assets/brands/apple.png";
@@ -14,10 +17,15 @@ import sony from "./assets/brands/sony.png";
 
  const App = () => {
      return(
-         <div className="wrapper">
+         <section className="wrapper">
            <div className="background-for-section-title">
-            <h3>Ремонт техники различных брендов</h3>
+            <h3 className="section-title">Ремонт техники различных брендов</h3>
            </div>
+           <section className="container container-mobile-padding-right-none">
+             <div className="brands"></div>
+             <div className="collapse-button content-is-collapsed">
+               Показать все
+             </div>
            <div className="swiper-wrapper">
              <div className="brands__card-item swiper-slide">
                <img src={lenovo} alt="lenovo"/>
@@ -65,8 +73,9 @@ import sony from "./assets/brands/sony.png";
              </div>
            </div>
          <div className="swiper-pagination"></div>
-         </div>
+           </section>
+         </section>
      )
  }
 
- render(<App />, document.getElementById("container"))
+ render(<App />, document.getElementById("container"));

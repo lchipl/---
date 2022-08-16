@@ -1,0 +1,98 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//@font-face {
+//  font-family: 'TTLakes-Medium';
+//  src: url('../../fonts/TTLakes-Medium.ttf');
+//}
+//
+//@font-face {
+//  font-family: 'TTLakes-Black';
+//  src: url('../../fonts/TTLakes-Black.ttf');
+//}
+//
+//@font-face {
+//  font-family: 'TTLakes-Bold';
+//  src: url('../../fonts/TTLakes-Bold.ttf');
+//}
+//
+//@font-face {
+//  font-family: 'TTLakes-Thin';
+//  src: url('../../fonts/TTLakes-Thin.ttf');
+//}
+
+body {
+  font-family: 'TTLakes-Thin';
+  background-color: #f8f8f8;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+}
+
+.brands {
+  display: none;
+  overflow-x: auto;
+  margin-top: 16px;
+
+  &__card-item {
+    width: 240px;
+    padding: 20px 16px;
+    border: 1px solid #eaeaea;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.check-partner-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff3e79;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    transition: all 200ms;
+    box-shadow: #cecece 0px 0px 5px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 2px;
+    background-color: #ff3e79;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+  }
+
+  &::before {
+    transform: translate(-50%, calc(-50% + -2.5px)) rotate(-45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, calc(-50% + 2px)) rotate(45deg);
+  }
+
+}
+
+.background-for-section-title {
+  .section-title {
+    text-transform: uppercase;
+    padding: 16px 0;
+    font-size: 16px;
+    color: #7e7e82;
+  }
+  background-color: #fff;
+}
